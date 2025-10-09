@@ -52,8 +52,8 @@ body {
 
 .apresentacao-titulo {
     margin-top: 15px;
-    font-family: var(--font-primaria);
-    font-size: 60px;
+    font-family: Montserrat Black;
+    font-size: 40px;
     color: var(--cor-primaria);
 }
 
@@ -99,6 +99,17 @@ body {
     box-shadow: 0 0 20px #00ffff;
     will-change: transform, box-shadow;
     
+}
+
+
+@media (max-width: 768px) {
+  .projetos {
+    flex-direction: column;
+    align-items: center;
+    max-width: 95%;
+    padding: 0.8em;
+  }
+
 }
 
 .projeto1:hover,
@@ -204,32 +215,45 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 80px;
     flex-wrap: wrap;
     background: rgba(171, 179, 179, 0.1); 
-    margin: 90px auto;
+    margin: 0 auto;
+    width: 100%;
     max-width: 1000px;
     padding: 1.2em;
+    box-sizing: border-box;
 
       
 }
 
 .projetos_carrossel iframe {
-    box-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
-    width: 250px;
-    height: 80%;
-    border-radius: 12px;
-    aspect-ratio: 9 / 16; /*Formato vertical padrão*/
-      
+  box-shadow: 0 0 15px #00fff7, 0 0 30px #00fff7;
+  width: 100%;
+  max-width: 250px;
+  aspect-ratio: 9 / 16;
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 @media (max-width: 768px) {
-    .projetos_carrossel iframe {
-    max-width: 100%;
-    height: 280px;
-    }
-}
+  .projetos_carrossel {
+    flex-direction: column;
+    align-items: center;
+    max-width: 95%;
+    padding: 1em;
+  }
 
+  .projetos_carrossel iframe {
+    width: 100%;
+    max-width: 400px; /* aumenta o tamanho máximo no celular */
+    height: auto;
+    transform: scale(1.1); /* dá um leve zoom */
+  }
+}
 
 .carrossels:hover {
     transform: translateY(-10px) scale(1.05);
@@ -369,11 +393,20 @@ body {
 
 .foto-feedback {
     display: flex;
+    width: 80px; /* Tamanho padrão em telas médias/grandes */
     width: 3.5%;
     border-radius: 50%;
     margin-top: 10px;
     margin-bottom: 15px;
 
+}
+
+/* Ajuste automático para telas menores */
+@media (max-width: 768px) {
+  .foto-feedback {
+    width: 50px; /* aumenta no celular */
+    height: 50px;
+  }
 }
 
 .cliente-feedback {

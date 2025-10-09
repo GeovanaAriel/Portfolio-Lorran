@@ -12,6 +12,12 @@
     
 }
 
+html, body {
+  overflow-x: hidden; /* impede o scroll lateral */
+  margin: 0;
+  padding: 0;
+}
+
 body {
     background: linear-gradient( to right, #0e0e18,#000000);
 
@@ -39,6 +45,14 @@ body {
   border-radius: 50%; /*deixa a foto redonda*/
   object-fit: cover;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Ajuste automático para telas menores */
+@media (max-width: 768px) {
+  .apresentacao-imagem {
+    width: 65px; /* aumenta no celular */
+    height: 65px;
+  }
 }
 
 .apresentacao {
@@ -223,6 +237,7 @@ body {
     width: 100%;
     max-width: 1000px;
     padding: 1.2em;
+    box-shadow: 0 0 20px #00ffff;
     box-sizing: border-box;
 
       

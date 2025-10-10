@@ -2,9 +2,11 @@
     --cor-primaria:#ffffff;
     --cor-secundaria:#808080;
     --cor-mouse:#1b365580;
-
+    
     --font-primaria: "Montserrat";
+    --font-secundaria: Montserrat black;
 }
+
 
 * { 
     margin: 0%;
@@ -31,6 +33,15 @@ body {
   height: 100%;
   object-fit: cover; /* preenche a tela */
   z-index: -1; /* fica atrás de todo o conteúdo */
+}
+
+@media (max-width: 768px) {
+  #video-fundo {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
 }
 
 .link_foto_insta {
@@ -66,9 +77,12 @@ body {
 
 .apresentacao-titulo {
     margin-top: 15px;
-    font-family: Montserrat Black;
     font-size: 40px;
     color: var(--cor-primaria);
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
 }
 
 .apresentacao-texto {
